@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task (Loops)</title>
+</head>
+<body>
+
+    <h1>Reflection Questions</h1>
+
+    <h4>What did you learn about JavaScript for loops and while loops through this task?</h4>
+    <p>
+        <li>Learned about Modular Operator</li>
+        <li>Learned the difference in for loop and while loop syntax for same kind of problem</li>
+    </p>
+
+    <br><hr><br>
+    <h4>How do for loops and while loops differ in their usage and syntax?</h4>
+    <p>
+            <li>Initialization is Within the loop header for for loop and Outside the loop for while loop</li>
+            <li> Condition is Within the loop header for for loop and Before the loop body for while loop</li>
+            <li>Increment/Decrement is done Within the loop header for for loop and Within the loop body for while loop</li>
+    </p>
+
+         <br><hr><br>
+
+         <h4>What advantages do loops offer when writing repetitive code?</h4>
+         <p>
+            Loops offer several advantages when writing repetitive code, making them an essential tool in programming:
+            <li>Efficiency  </li>
+            <li>Code Reusability</li>
+            <li>Readability</li>
+            <li>Flexibility</li>
+         </p>
+    <script>
+    // 1.Multiplication Table
+
+        let m = 5;
+        for (let i = 1; i <= 10; i++) {
+            console.log(m + " * " + i + " = " + m*i);            
+        }
+
+        console.log('------------------------------')
+    
+    // 2.Sum of Even Numbers Between 1 and 50
+
+    let sum=0 
+    for(j = 1; j <= 50; j++)
+    {
+        if(j % 2 == 0)
+        {
+            sum = sum + j
+        }
+   
+    }
+    console.log('The sum of even numbers from 1 to 50 is', sum);
+
+    console.log('------------------------------')
+
+    // 3.Countdown Timer
+
+    let i = 2;
+    while (i <= 20) {
+        let j = 2;
+        while (j < i) {
+            if (i % j == 0) {
+                break;
+            }
+            j++;
+        }
+        if (i == j) {
+            console.log(i);
+        }
+        i++;
+    }
+    
+    console.log('------------------------------')
+
+    // 4.Sum of Odd Numbers
+
+    let o = 1;
+    sum = 0;
+    while (o < 20) {
+        if (o % 3 == 0) {
+            console.log(' Odd Number is ' + o)
+            sum = sum + o
+        }
+        o++
+    }
+    console.log('sum of all odd numbers is', sum)
+
+    console.log('------------------------------')
+
+    // 5.Factorial Calculation
+
+    let f = 5
+    let fact = 1
+    let k = 1
+    while (k <= 5) {
+        fact = fact * k;
+        k++
+    }
+    console.log('Factorial of a number 5 is', fact)
+
+    </script>
+</body>
+</html>
