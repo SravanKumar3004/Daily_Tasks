@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task (Functions)</title>
+</head>
+<body>
+    
+    <h1>Reflection Questions</h1>
+
+    <h3>1.What did you learn about JavaScript functions through this task?</h3>
+    <p>
+        <li>Functions with Parameters</li>
+        <li>Functions without Parameters</li>
+        <li>Functions with Return Statements</li>
+        <li>Combining Functions</li>
+        <li>Functions with Default Parameters</li>
+    </p>
+
+    <h3>2.How do functions with and without parameters differ in their usage?</h3>
+    <p>
+        <li>Without Parameters: Fixed behavior, no input required, less flexible.</li>
+        <li>With Parameters: Behavior depends on input, allows for greater flexibility and reuse.</li>
+    </p>
+
+    <h3>3.What advantages do return statements offer in functions?</h3>
+    <p>
+        <li>Code Reusability</li>
+    </p>
+
+    <script>
+        // Functions without Parameters
+
+//  1. Write a function named `greet` that prints "Hello, World!" to the console.
+        function greet() {
+            console.log("Hello, World!");
+        }
+//  2. Call the `greet` function to ensure it works as expected.
+        greet();
+
+    console.log('-------------------------------------');
+            
+
+//         Functions with Parameters
+
+// 1. Write a function named `addNumbers` that takes two parameters, `a` and `b`.
+            function addNumbers(a, b) {
+                
+            }
+// 2. Inside the function, print the sum of `a` and `b`.
+            function addNumbers(a, b) {
+                console.log(a + b);
+                
+            }
+// 3. Call the `addNumbers` function with different sets of numbers to demonstrate its functionality.
+                addNumbers(3, 5);
+                addNumbers(10, 20);
+                addNumbers(-1, 1);
+                addNumbers(0, 0);
+                addNumbers(7, 13);
+
+    console.log('-------------------------------------');
+
+//                 Functions with Return Statements
+
+// 1. Write a function named `multiply` that takes two parameters, `x` and `y`.
+            function multiply(x, y) {
+
+            }
+// 2. Inside the function, return the product of `x` and `y`.
+            function multiply(x, y) {
+                    return x * y;
+                }
+// 3. Store the returned value in a variable and print it to the console to ensure the function works as expected.
+            let result = multiply(12, 4);
+            console.log(`The product is ${result}`);
+
+    console.log('-------------------------------------');
+
+//     Combining Functions
+
+// 1. Write a function named `calculateRectangleArea` that takes two parameters, `length` and `width`.
+        function calculateRectangleArea(length, width) {
+
+        }
+
+// 2. Inside the function, use the `multiply` function from the previous task to calculate the area of the rectangle and return the result.
+        function calculateRectangleArea(length, width) {
+            return multiply(length, width);
+        }
+
+// 3. Call the `calculateRectangleArea` function and print the result to the console.
+        let area = calculateRectangleArea(4, 10);
+        console.log(area); 
+
+    console.log('-------------------------------------');
+
+
+//     Default Parameters
+
+// 1. Write a function named `greetUser` that takes one parameter, `name`, with a default value of "Guest".
+        function greetUser(name = "Guest") {
+
+        }
+
+// 2. Inside the function, print a message saying "Hello, [name]!".
+        function greetUser(name = "Guest") {
+            console.log(`Hello, ${name}!`);
+        }
+
+// 3. Call the `greetUser` function with and without passing an argument to demonstrate the default parameter functionality.
+    greetUser("sravan");
+    greetUser();
+    </script>
+</body>
+</html>
