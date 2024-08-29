@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task (Functions)</title>
+</head>
+<body>
+<h2>Global and Local Scope</h2>
+    <li>globalVar is declared outside of a function, making it a global variable.</li>
+        <li>It can be accessed from anywhere in the code</li>
+        <br>
+        <li>localVar is declared inside the scopeTest function, making it a local variable.</li>
+        <li>It can only be accessed within the scopeTest function.</li>
+        <li>While trying to access localVar outside of scopeTest will result in a ReferenceError because localVar is not defined in the global scope.</li>
+</p>
+<br>
+<h2>Pure Functions</h2>
+<p>
+    <li>Same Input, Same Output:-
+
+        Every single time. This makes them
+        predictable and easily testable</li>
+        <li>No Side-Efferts:-
+
+            No mutating input, logging HTTP calls,
+            writing to disk</li>
+</p>
+
+    <script>
+//         Arrow Functions
+// Write an arrow function named multiplyByTwo that takes one parameter num and returns the value of num multiplied by 2.
+const multiplyByTwo = num => num * 2;
+
+// Write an arrow function named isEven that takes one parameter number and returns true if the number is even, otherwise returns false.
+const isEven = number => number % 2 === 0;
+
+// Test these functions by calling them with different arguments and printing the results to the console.
+
+console.log(multiplyByTwo(3));
+console.log(multiplyByTwo(5)); 
+console.log(multiplyByTwo(0));
+
+console.log(isEven(4));
+console.log(isEven(7));
+console.log(isEven(5));
+
+console.log('---------------------------------');
+
+
+//        Global and Local Scope
+// Create a global variable named globalVar and assign it a value of 10.
+let globalVar = 10;
+// Write a function named scopeTest that creates a local variable named localVar with a value of 20.
+function scopeTest() {
+    let localVar = 20;
+}
+// Inside scopeTest, try to print both globalVar and localVar to the console.
+function scopeTest() {
+  let localVar = 20;
+
+  console.log("Inside function:");
+  console.log("globalVar:", globalVar);
+  console.log("localVar:", localVar);
+}
+
+scopeTest();
+// Outside the function, try to print localVar and observe what happens. Reflect on the behavior and explain the concept of global and local scope.
+console.log("Outside function:");
+console.log("globalVar:", globalVar);
+// console.log("localVar:", localVar);
+
+console.log('---------------------------------');
+
+
+//      Closures
+// Write a function named outerFunction that has a variable outerVar with a value of 5.
+function outerFunction() {
+    let outerVar = 5;
+}
+// Inside outerFunction, define an inner function named innerFunction that returns the value of outerVar.
+function outerFunction() {
+  let outerVar = 5;
+
+   function innerFunction() {
+    return outerVar;
+  }
+}
+// Return the innerFunction from outerFunction and store the result in a variable named closure.
+function outerFunction() {
+  let outerVar = 5;
+
+  function innerFunction() {
+    return outerVar;
+  }
+
+  return innerFunction;
+}
+
+let closure = outerFunction();
+// Call closure and print the result to understand how closures work.
+console.log(closure());
+
+console.log('---------------------------------');
+
+
+//      Pure Functions
+// Write a function named sum that takes two parameters, a and b, and returns their sum. Ensure that the function does not modify any external variables.
+function sum(a, b) {
+  return a + b;
+}
+// Write a function named multiply that takes two parameters, x and y, and returns their product. Ensure this function is also pure.
+function multiply(x, y) {
+  return x * y;
+}
+// Explain why these functions are considered pure functions.
+console.log(sum(3, 5));
+console.log(multiply(4, 6));
+
+console.log('---------------------------------');
+
+
+//      Call Stack
+// Create three functions: functionA, functionB, and functionC.
+function functionA() {
+}
+
+function functionB() {
+}
+
+function functionC() {
+}
+// Inside functionA, call functionB. Inside functionB, call functionC. Inside functionC, print a message like "In functionC".
+function functionA() {
+  functionB();
+}
+
+function functionB() {
+  functionC();
+}
+
+function functionC() {
+  console.log("In functionC");
+}
+// Call functionA to see the order of execution. Reflect on how the call stack handles function execution and trace the flow of these calls.
+functionA();
+    </script>
+</body>
+</html>
