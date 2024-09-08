@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator Program</title>
+</head>
+<body>
+    
+    <script>
+        
+        // Define Variables and Functions:
+
+        // Store and Display History:
+
+        let calculationHistory = [];
+
+        function performOperation(operation, num1, num2) {
+            if (operation === "add") {
+                return num1 + num2;
+            } else if (operation === "subtract") {
+                return num1 - num2;
+            } else if (operation === "multiply") {
+                return num1 * num2;
+            } else if (operation === "divide") {
+                return num2 !== 0 ? num1 / num2 : "Error: Division by zero";
+            } else {
+                return "Error: Invalid operation";
+            }
+        }
+
+
+        // Input Handling:
+
+        function getUserInput() {
+            const allowedOperations = ["add", "subtract", "multiply", "divide"];
+            
+            let operation = prompt("Enter the operation (add, subtract, multiply, divide):");
+            if (!allowedOperations.includes(operation)) {
+                alert("Invalid operation. Please enter one of the following: add, subtract, multiply, divide.");
+                return getUserInput();
+            }
+            
+            let num1 = prompt("Enter the first number:");
+            if (isNaN(num1) || num1.trim() === "") {
+                alert("Invalid input. Please enter a valid number.");
+                return getUserInput();
+            }
+            num1 = parseFloat(num1);
+            
+            let num2 = prompt("Enter the second number:");
+            if (isNaN(num2) || num2.trim() === "") {
+                alert("Invalid input. Please enter a valid number.");
+                return getUserInput();
+            }
+            num2 = parseFloat(num2);
+            
+            return { operation, num1, num2 };
+        }
+
+
+        // Perform Calculations:
+
+        function performOperation(operation, num1, num2) {
+            if (operation === "add") {
+                return num1 + num2;
+            } else if (operation === "subtract") {
+                return num1 - num2;
+            } else if (operation === "multiply") {
+                return num1 * num2;
+            } else if (operation === "divide") {
+                return num2 !== 0 ? num1 / num2 : "Error: Division by zero";
+            } else {
+                return "Error: Invalid operation";
+            }
+        }
+        
+        function displayHistory() {
+            if (calculationHistory.length === 0) {
+                alert("No calculation history available.");
+                return;
+            }
+            
+            let historyString = "Calculation History:\n";
+            calculationHistory.forEach((entry, index) => {
+                historyString += `${index + 1}. ${entry.num1} ${entry.operation} by ${entry.num2} = ${entry.result}\n`;
+            });
+            
+            alert(historyString);
+        }
+        
+        function main() {
+            let continueCalculation = true;
+            if (continueCalculation) {
+                const userInput = getUserInput();
+                const result = performOperation(userInput.operation, userInput.num1, userInput.num2);
+                alert(`Result: ${result}`);
+                
+                calculationHistory.push({
+                    operation: userInput.operation,
+                    num1: userInput.num1,
+                    num2: userInput.num2,
+                    result: result
+                });
+                
+                const userChoice = prompt("Do you want to perform another operation? (yes/no):");
+                if (userChoice.toLowerCase() !== "yes") {
+                    continueCalculation = false;
+                }
+            }
+            
+            alert("Thank you for using the calculator!");
+            displayHistory();
+        }
+        
+        main();
+
+
+        
+
+
+
+    </script>
+
+</body>
+</html>
