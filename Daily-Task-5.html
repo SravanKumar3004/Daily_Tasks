@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CRUD Operations</title>
+</head>
+<body>
+    <p id="mypara">this is paragraph</p>
+    <button onclick="UpdatedContent()">click</button>
+    <br> <hr>
+    <img id="MyImage" src="https://images.pexels.com/photos/922978/pexels-photo-922978.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Original Image">
+    <button onclick="ChangeImg()">click to change img</button>
+    <br><hr>
+    <div id="delete">This will be removed</div>
+    <br><hr>
+    <script>
+        // Task 1: Creating and Appending an Element
+        let newDiv = document.createElement('div');
+        newDiv.textContent = 'Hello, World!';
+        document.body.appendChild(newDiv);
+        
+
+        // Task 2: Changing the Content of an Existing Element
+        function UpdatedContent() {
+            document.getElementById('mypara').textContent = 'This is updated content.';
+            document.getElementById('mypara').style.color='orangered'
+        }
+
+        // Task 3: Creating and Appending a List of Items
+        let ul=document.createElement('ul')
+        let items=['Item1','Item2','Item3']
+        items.forEach(element => {
+            const li=document.createElement('li')
+            li.textContent=element
+            ul.append(li)
+        });
+        
+        document.body.append(ul)
+
+        // Task 4: Editing an Attribute of an Element
+        function ChangeImg() {
+            const ele = document.getElementById('MyImage')
+            ele.setAttribute('src', 'https://images.pexels.com/photos/1291766/pexels-photo-1291766.jpeg?auto=compress&cs=tinysrgb&w=600')
+        }
+
+        // Task 5: Deleting an Element
+        let remove=document.getElementById('delete')
+        remove.remove()
+    </script>
+    
+</body>
+</html>
